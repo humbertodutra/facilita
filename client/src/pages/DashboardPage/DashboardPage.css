@@ -1,0 +1,100 @@
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Removes space between table borders */
+    margin-top: 20px;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd; /* Light grey border under each row */
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Light grey background for the header */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      padding: 10px;
+    }
+  
+    table {
+      display: block;
+      overflow-x: auto; /* Allows table to scroll horizontally on small screens */
+    }
+  
+    th,
+    td {
+      display: block; /* Stack table cells vertically under each other */
+    }
+  
+    td::before {
+      content: attr(data-label); /* Display data label before each cell */
+      float: left;
+      font-weight: bold;
+    }
+  
+    td {
+      text-align: right; /* Align cell content to the right */
+    }
+  
+    th {
+      display: none; /* Hide table headers on small screens */
+    }
+  }
+  
+  /* Add more custom styles as needed */
+  
+
+  .route-and-map-container {
+    display: flex;
+    justify-content: space-between; /* This separates the child elements */
+    align-items: flex-start; /* Aligns items at the start of the flex container */
+  }
+  
+  .route-list {
+    flex: 1; /* Allows the route list to grow and take up available space */
+    padding-right: 20px; /* Adds some space between the list and the map */
+  }
+  
+  .map-container {
+    flex: 1; /* Allows the map container to grow and take up available space */
+  }
+  
+  /* Adjust the map's size if necessary */
+  .map-container .leaflet-container {
+    height: 100%;
+    min-height: 400px; /* Adjust based on your needs */
+  }
+  
