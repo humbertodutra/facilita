@@ -1,8 +1,9 @@
 # facilita-juridico
 
 You can see it alive at:
+https://facilita-client.vercel.app/ - CLIENT
 
-
+https://facilita-server.vercel.app/ - SERVER (API)
 
 ## BACKEND
 
