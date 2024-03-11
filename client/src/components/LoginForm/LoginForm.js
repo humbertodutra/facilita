@@ -33,6 +33,7 @@ function LoginForm() {
 		} catch (error) {
 			console.error('Error when logging in', error);
 			alert(error.message);
+			// 
 		}
 	};
 
