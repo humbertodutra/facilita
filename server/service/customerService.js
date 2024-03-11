@@ -3,14 +3,14 @@ const { sequelize } = require('../models');
 const calcularDistancia = require('../calculating');
 
 exports.getAllCustomers = async () => {
-    const a =  await Customer.findAll({
+    const customers =  await Customer.findAll({
         include: [{
             model: CustomerLocation,
             as: 'location' // Ensure this matches the alias used in the association
         }]
     });
 
-    return a;
+    return customers;
 };
 
 exports.getCustomerById = async (id) => {
