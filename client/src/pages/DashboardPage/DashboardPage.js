@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { useUser } from '../../context/UserContext';
 
 import { useNavigate } from 'react-router-dom';
-import L from 'leaflet';
+
 import MapComponent from '../../components/MapComponent/MapComponent';
-import './DashboardPage.css'; // Adjust the path based on your file structure
+import './DashboardPage.css'; 
 
 
 function DashboardPage() {
@@ -84,29 +84,29 @@ const fetchCustomers = async () => {
   
     if (emailExists) {
       alert("O email fornecido já está em uso.");
-      return false; // Falha na validação
+      return false; 
     }
   
     if (phoneExists) {
       alert("O telefone fornecido já está em uso.");
-      return false; // Falha na validação
+      return false; 
     }
   
-    // Validar formato de latitude e longitude
+   
     const latitude = parseFloat(newCustomer.location.x);
     const longitude = parseFloat(newCustomer.location.y);
   
     if (isNaN(latitude) || latitude < -90 || latitude > 90) {
       alert("O valor de 'x' (latitude) é inválido. Deve estar entre -90 e 90.");
-      return false; // Falha na validação
+      return false; 
     }
   
     if (isNaN(longitude) || longitude < -180 || longitude > 180) {
       alert("O valor de 'y' (longitude) é inválido. Deve estar entre -180 e 180.");
-      return false; // Falha na validação
+      return false;
     }
   
-    return true; // Sucesso na validação
+    return true; 
   };
   
   
@@ -129,7 +129,6 @@ const handleBackToLogin = () => {
 };
 
 const handleAddCustomer = async () => {
-  // Cria um novo objeto com a estrutura correta para 'location'
   if (!validateCustomer()) return;
   const customerToAdd = {
     ...newCustomer,
@@ -248,22 +247,15 @@ const cancelEdit = () => {
 };
 
 const saveEdit = async () => {
-  const updatedCustomer = {
-      ...editingCustomer,
-      location: {
-          x: parseFloat(editingCustomer.location?.x), // Ensure the location values are correctly formatted as numbers
-          y: parseFloat(editingCustomer.location?.y)
-      }
-  };
 
   try {
       const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/customers/${editingId}`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
-              'Authorization': user.token, // Include the token if your API requires authentication
+              'Authorization': user.token, 
           },
-          body: JSON.stringify(updatedCustomer)
+          body: JSON.stringify(editingCustomer)
       });
 
       if (!response.ok) {
@@ -273,7 +265,7 @@ const saveEdit = async () => {
       }
 
    // Inside your try block, after the fetch call
-    editCustomer(editingId, updatedCustomer);
+    editCustomer(editingId, editingCustomer);
     setEditingId(null); // Exit editing mode
 
 
