@@ -8,7 +8,7 @@ https://facilita-server.vercel.app/ - SERVER (API)
 ## BACKEND
 
 ### 1. Description
-A brief description of what the application does and the problem it solves. This backend serves as the core of the `facilita-juridico`, handling user authentication, product management, and more, providing a robust API for the frontend to interact with.
+A brief description of what the application does and the problem it solves. This backend serves as the core of the `facilita-juridico`, handling user authentication, customer management, and more, providing a robust API for the frontend to interact with.
 
 ### 2. Technologies Used
 - Node.js
@@ -91,7 +91,7 @@ Successful Response (Status: 200):
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDk3NDQxNzQsImV4cCI6MTcwOTc1MTM3NH0.sTrxQM7emrZJUv2QxEc7WvyXfhblQLq2T6KpYiR-q4I"
 }
 
-### 5.3 - Working with Product Routes:
+### 5.3 - Working with Customers Routes:
 
 
 Add the following field to your request header, using the token received above: 
@@ -143,7 +143,7 @@ Request Body Examples:
         }
 }
 
-#### 5.3.5 - Deleting a Product:
+#### 5.3.5 - Deleting a Customer:
 
 DELETE - /api/customers/:id
 Successful Response:
@@ -159,6 +159,9 @@ POST - /api/customers/calculaterouter
 
 Position 0 of the array must be the store location (departure and return)
 Example:
+
+
+
 [
     {
         "nome": "mystore",
